@@ -109,6 +109,24 @@ friends_network_project/
 10. **Access the admin panel**:
     - Visit `http://localhost:8000/admin` and log in with the superuser credentials.
 
+### Docker Deployment
+
+To containerize and run the application using Docker, follow these steps: (Ensure Docker is installed on your system)
+
+Run Docker Compose: In the project root directory (where the docker-compose.yml file is located), run the following command to build and start the services:
+
+docker-compose up --build
+
+Access the API: Once the containers are running, the Django app will be accessible at http://localhost:8000, PostgreSQL at port 5432, and Redis at port 6379.
+
+### Postman Collection
+
+To simplify testing the API, a public Postman collection has been created. You can use the following link to import the collection directly into your Postman workspace:
+
+Postman Collection URL: [https://www.postman.com/gnanaprakashsiv/postman-friends-network-api/collection/n4u25ug/friends-network-api]
+
+This collection includes all the API endpoints, with predefined requests for sending friend requests, user login, search, and more. Simply import the collection and use the generated JWT tokens in the authorization headers to test the API.
+
 ## API Documentation
 
 The API is documented using `drf-spectacular`. You can access the documentation via the following routes:
