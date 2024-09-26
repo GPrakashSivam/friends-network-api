@@ -19,7 +19,7 @@ This is a Django-based RESTful API for managing user registration/login, friend 
 ## Project Structure
 
 ```
-friends_network_project/
+friends_network_api/
 ├── friends/                    # Friends Network app
 │   ├── migrations/             # Migration files for the app
 │   ├── admin.py                # Admin registration for models
@@ -50,7 +50,7 @@ friends_network_project/
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/your_username/friends-network-api.git
+    git clone https://github.com/GPrakashSivam/friends-network-api.git
     cd friends-network-api
     ```
 
