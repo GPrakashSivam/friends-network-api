@@ -1,5 +1,5 @@
 from django.urls import path
-from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
+from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView
 from .views import (
     UserSignupView,
     UserLoginView,
@@ -35,8 +35,6 @@ urlpatterns = [
 
     # API schema generation
     path('schema/', SpectacularAPIView.as_view(), name='schema'),
-    # Swagger API UI
-    path('docs/swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
     # Redoc API UI
     path('docs/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 ]
