@@ -5,6 +5,14 @@
 
 This is a Django-based RESTful API for managing user registration/login, friend requests, friendships, blocking/unblocking users, and logging user activity. The project uses JWT for authentication and includes rate-limiting to prevent abuse. Redis has been integrated for caching, and PostgreSQL is used as the database.
 
+### Deployed in the Cloud Service(Render)
+
+To get a quick feel of this project, this complete API project is hosted as a API Services with PostgreSQL DB in the cloud services hosted by render.com(free tier)
+
+Hosted URL: [https://friends-network-api.onrender.com]
+
+Please check out the above URL which covers all the use cases defined in the assignment document.
+
 ## Features
 - User registration and authentication (JWT)
 - Role-based access control (RBAC)
@@ -46,7 +54,7 @@ friends_network_api/
 - Redis
 - Git
 
-### Step-by-Step Guide
+### Step-by-Step Guide for Local installation
 
 1. **Clone the repository**:
     ```bash
@@ -68,10 +76,13 @@ friends_network_api/
 4. **Set up environment variables**:
    Create a `.env` file in the root directory and add the following:
     ```env
-    SECRET_KEY=<your_secret_key>
-    DEBUG=True
-    DATABASE_URL=postgres://dev_user:password@localhost:5432/projects_db
-    REDIS_URL=redis://localhost:6379/1
+    ENVIRONMENT=Production
+    DB_HOST=your-host
+    DB_USER=user-name
+    DB_PASSWORD=password
+    DB_NAME=projects_db
+    DB_PORT=6543
+    SECRET_KEY=django-secure-hhgshs67-p9=d8s7675df9h%*9w%dkvshdkg)0
     ```
 
 5. **Set up the PostgreSQL database**:
@@ -82,8 +93,11 @@ friends_network_api/
       CREATE USER dev_user WITH PASSWORD 'password';
       ALTER ROLE dev_user SET client_encoding TO 'utf8';
       ALTER ROLE dev_user SET default_transaction_isolation TO 'read committed';
-      ALTER ROLE dev_user SET timezone TO 'IST';
       GRANT ALL PRIVILEGES ON DATABASE projects_db TO dev_user;
+      ```
+    - Enable pg_trgm extension in database to use trigram operators(GIN Index for full-text search):
+      ```bash
+      CREATE EXTENSION IF NOT EXISTS pg_trgm;
       ```
 
 6. **Apply migrations**:
