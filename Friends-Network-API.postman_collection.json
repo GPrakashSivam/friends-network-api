@@ -1,0 +1,363 @@
+{
+	"info": {
+		"_postman_id": "382088ef-39b2-4f79-898a-0414e906361a",
+		"name": "Friends-Network-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22135274"
+	},
+	"item": [
+		{
+			"name": "Users-Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"jambu@example.com\",\r\n  \"password\": \"siv\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://friends-network-api.onrender.com/api/signup/",
+					"protocol": "https",
+					"host": [
+						"friends-network-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login-User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"jambu@example.com\",\r\n  \"password\": \"siv\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://friends-network-api.onrender.com/api/login/",
+					"protocol": "https",
+					"host": [
+						"friends-network-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Friend Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"receiver_id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://friends-network-api.onrender.com/api/friend-request/send/",
+					"protocol": "https",
+					"host": [
+						"friends-network-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"friend-request",
+						"send",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pending Friends Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://friends-network-api.onrender.com/api/friend-requests/pending/",
+					"protocol": "https",
+					"host": [
+						"friends-network-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"friend-requests",
+						"pending",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accept Friend Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"request_id\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://friends-network-api.onrender.com/api/friend-request/accept/",
+					"protocol": "https",
+					"host": [
+						"friends-network-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"friend-request",
+						"accept",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reject Friend Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"request_id\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://friends-network-api.onrender.com/api/friend-request/reject/",
+					"protocol": "https",
+					"host": [
+						"friends-network-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"friend-request",
+						"reject",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Friends List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://friends-network-api.onrender.com/api/friends",
+					"protocol": "https",
+					"host": [
+						"friends-network-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"friends"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Activities",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://friends-network-api.onrender.com/api/activities",
+					"protocol": "https",
+					"host": [
+						"friends-network-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"activities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Block User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://friends-network-api.onrender.com/api/block/",
+					"protocol": "https",
+					"host": [
+						"friends-network-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"block",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UnBlock User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://friends-network-api.onrender.com/api/unblock/",
+					"protocol": "https",
+					"host": [
+						"friends-network-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"unblock",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "Token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3NTQyMzk4LCJpYXQiOjE3Mjc1Mzg3OTgsImp0aSI6IjlhYzAxNWZmZjRjOTQxOTdhMTFlOWJkOGNkYWM0MTQ0IiwidXNlcl9pZCI6M30.bCVJdgLbIixfr5cfuJmhW4V8BNROdsqCb46FI-BeeMw"
+		}
+	]
+}

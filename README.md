@@ -135,9 +135,9 @@ Access the API: Once the containers are running, the Django app will be accessib
 
 ### Postman Collection
 
-To simplify testing the API, a public Postman collection has been created. You can use the following link to import the collection directly into your Postman workspace:
+To simplify the testing of API, a Postman collection is created as json file and placed in this project github root folder:
 
-Postman Collection URL: [https://www.postman.com/gnanaprakashsiv/postman-friends-network-api/collection/n4u25ug/friends-network-api]
+Postman Collection JSON file name: [Friends-Network-API.postman_collection.json]
 
 This collection includes all the API endpoints, with predefined requests for sending friend requests, user login, search, and more. Simply import the collection and use the generated JWT tokens in the authorization headers to test the API.
 
